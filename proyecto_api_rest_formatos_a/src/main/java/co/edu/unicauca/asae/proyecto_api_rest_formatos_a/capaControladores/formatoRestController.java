@@ -1,6 +1,6 @@
 package co.edu.unicauca.asae.proyecto_api_rest_formatos_a.capaControladores;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +35,8 @@ public class formatoRestController {
 	}
 
 	@GetMapping("/listarfecha")
-	public List<formatoDTORespuesta> listarFormatosFecha(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaInicio,@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaFin ) {		
+	public List<formatoDTORespuesta> listarFormatosFecha(@RequestParam("inicio") @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaInicio,
+	@RequestParam("fin") @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaFin ) {		
 		return formatoService.findAllByDate(fechaInicio,fechaFin);
 	}
 

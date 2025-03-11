@@ -1,6 +1,5 @@
 package co.edu.unicauca.asae.proyecto_api_rest_formatos_a.fachadaServices.services;
 
-import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
@@ -66,8 +65,8 @@ public class FormatoServiceImpl implements IFormatoService{
     public List<formatoDTORespuesta> findAllByDate(Date fechaInicio, Date fechaFin) {
         List<formatoDTORespuesta> listaRetornar=null;
 		Optional<Collection<formatoEntity>> formatosEntityOpt = this.servicioAccesoBaseDatos.findAll();
-		LocalDate fechaI= LocalDate.parse(fechaInicio.toString());
-		LocalDate fechaF= LocalDate.parse(fechaFin.toString());
+		fechaInicio.toString();
+		fechaFin.toString();
 		
 		
 		// Si el Optional está vacío, devolvemos una lista vacía
@@ -77,18 +76,17 @@ public class FormatoServiceImpl implements IFormatoService{
 		}
 		
 		// Convertimos la colección a una lista y la mapeamos a formatoDTO
-		Collection<formatoEntity> formatosEntity = formatosEntityOpt.get();
+		Collection<formatoEntity> formatosEntity = formatosEntityOpt.get().stream()
+				.filter(formato -> formato.getFechaRegistro().after(fechaInicio) &&
+						formato.getFechaRegistro().before(fechaFin))
+				.toList();
+				
 		listaRetornar = formatosEntity.stream().map(formato ->{
-			LocalDate formatoFecha = LocalDate.parse(formato.getFechaRegistro().toString());
-			if(formatoFecha.isAfter(fechaI) && formatoFecha.isBefore(fechaF)){
 				if(formato instanceof formatoPPE){
 					return this.modelMapper.map(formato, formatoPPDTORespuesta.class);
 				}else{
 					return this.modelMapper.map(formato, formatoTIDTORespuesta.class);
 				}
-			}else{
-				return null;
-			}
 		}).toList();
 		
 		
