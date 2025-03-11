@@ -6,9 +6,11 @@ import lombok.Setter;
 @Setter
 public class formatoPPDTOPeticion extends formatoDTOPeticion {
     private String asesor;
-    public formatoPPDTOPeticion(String asesor,String titulo, String estudiante, Integer codigo, String director) {
+    private String carta;
+    public formatoPPDTOPeticion(String carta, String asesor,String titulo, String estudiante, Integer codigo, String director) {
         super( titulo, estudiante, codigo, director);
         this.asesor=asesor;
+        this.carta=carta;
     }
     public formatoPPDTOPeticion() {
     }

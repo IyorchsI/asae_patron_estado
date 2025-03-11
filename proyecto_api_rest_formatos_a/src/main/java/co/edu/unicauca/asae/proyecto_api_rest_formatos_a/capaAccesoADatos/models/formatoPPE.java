@@ -12,9 +12,11 @@ import lombok.Setter;
 public class formatoPPE extends formatoEntity {
 
     private String asesor;
-    public formatoPPE(String asesor,Integer id,String titulo,String estudiante,Integer codigo,String director,Date fechaRegistro,enumEstados estados){
+    private String carta;
+    public formatoPPE(String carta, String asesor,Integer id,String titulo,String estudiante,Integer codigo,String director,Date fechaRegistro,enumEstados estados){
         super(id,titulo,estudiante,codigo,director,fechaRegistro,estados);
         this.asesor=asesor;
+        this.carta=carta;
     }
     
 }

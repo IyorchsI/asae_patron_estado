@@ -75,7 +75,7 @@ public class formatoRepository {
     }
 
     private void cargarFormatos(){
-        mapaFormatos.put(1, new formatoPPE("asesor",1,"titulo","estudiante",123,"director",new Date(),enumEstados.EN_FORMULACION));
+        mapaFormatos.put(1, new formatoPPE("cartica","asesor",1,"titulo","estudiante",123,"director",new Date(),enumEstados.EN_FORMULACION));
         mapaFormatos.put(2, new formatoTIE(3312, "aasd",2,"titulo","estudiante",123,"director",new Date(),enumEstados.EN_FORMULACION));
     }
 

@@ -87,7 +87,7 @@
 			"response": []
 		},
 		{
-			"name": "crear",
+			"name": "crearTI",
 			"request": {
 				"auth": {
 					"type": "inherit"
@@ -96,7 +96,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"type\": \"PP\",\r\n        \"titulo\": \"nuevoformato\",\r\n        \"estudiante\": \"Jose\",\r\n        \"codigo\": 44555,\r\n        \"director\": \"nosquien\",\r\n        \"asesor\": \"asesor\"\r\n    }",
+					"raw": "    {\r\n        \"type\": \"TI\",\r\n        \"titulo\": \"titulo\",\r\n        \"estudiante\": \"estudiante\",\r\n        \"codigo\": 123,\r\n        \"director\": \"director\",\r\n        \"estudiante2\": \"aasd\",\r\n        \"codigo2\": 3312\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -119,7 +119,39 @@
 			"response": []
 		},
 		{
-			"name": "actualizar",
+			"name": "crearPP",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"type\": \"PP\",\r\n        \"titulo\": \"titulocreado\",\r\n        \"estudiante\": \"estudiante\",\r\n        \"codigo\": 123,\r\n        \"director\": \"director\",\r\n        \"asesor\": \"asesor\",\r\n        \"carta\": \"cartica\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/formatos/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"formatos",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizarPP",
 			"request": {
 				"auth": {
 					"type": "inherit"
@@ -128,7 +160,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"type\": \"PP\",\r\n        \"titulo\": \"formatoActualizado\",\r\n        \"estudiante\": \"Jose\",\r\n        \"codigo\": 321,\r\n        \"director\": \"nosquien\",\r\n        \"asesor\": \"asesor\"\r\n    }",
+					"raw": "{\r\n        \"type\": \"PP\",\r\n        \"titulo\": \"actualizado\",\r\n        \"estudiante\": \"estudiante\",\r\n        \"codigo\": 123,\r\n        \"director\": \"director\",\r\n        \"asesor\": \"asesor\",\r\n        \"carta\": \"cartica\"\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -152,22 +184,46 @@
 			"response": []
 		},
 		{
-			"name": "actualizar",
+			"name": "actualizarTI",
 			"request": {
 				"auth": {
 					"type": "inherit"
 				},
-				"method": "PATCH",
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"type\": \"PP\",\r\n        \"titulo\": \"formatoActualizado\",\r\n        \"estudiante\": \"Jose\",\r\n        \"codigo\": 321,\r\n        \"director\": \"nosquien\",\r\n        \"asesor\": \"asesor\"\r\n    }",
+					"raw": "    {\r\n        \"type\": \"TI\",\r\n        \"titulo\": \"actualizado\",\r\n        \"estudiante\": \"estudiante\",\r\n        \"codigo\": 123,\r\n        \"director\": \"director\",\r\n        \"estudiante2\": \"aasd\",\r\n        \"codigo2\": 3312\r\n    }",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
+				"url": {
+					"raw": "localhost:5000/api/formatos/actualizar/2",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"formatos",
+						"actualizar",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cambiarestado",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "PATCH",
+				"header": [],
 				"url": {
 					"raw": "localhost:5000/api/formatos/cambiarestado/1/EN_EVALUACION",
 					"host": [

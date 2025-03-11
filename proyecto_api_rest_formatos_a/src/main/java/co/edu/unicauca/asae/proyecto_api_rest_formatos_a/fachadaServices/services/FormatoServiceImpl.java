@@ -147,6 +147,7 @@ public class FormatoServiceImpl implements IFormatoService{
 				objFormatoPP.setTitulo(formatoPP.getTitulo());
 				objFormatoPP.setAsesor(formatoPP.getAsesor());
 				objFormatoPP.setCodigo(formatoPP.getCodigo());
+				objFormatoPP.setCarta(formatoPP.getCarta());
 				objFormatoPP.setEstudiante(formatoPP.getEstudiante());
 				objFormatoPP.setDirector(formatoPP.getDirector());
 				optionalFormato = this.servicioAccesoBaseDatos.update(id, objFormatoPP);

@@ -9,9 +9,11 @@ import lombok.Setter;
 @Setter
 public class formatoPPDTORespuesta extends formatoDTORespuesta {
     private String asesor;
-    public formatoPPDTORespuesta(String asesor, Integer id,String titulo, String estudiante, Integer codigo, String director, Date fechaRegistro, enumEstados estado) {
+    private String carta;
+    public formatoPPDTORespuesta(String carta, String asesor, Integer id,String titulo, String estudiante, Integer codigo, String director, Date fechaRegistro, enumEstados estado) {
         super(id,titulo, estudiante, codigo, director, fechaRegistro, estado);
         this.asesor=asesor;
+        this.carta=carta;
     }
     public formatoPPDTORespuesta() {
     }
