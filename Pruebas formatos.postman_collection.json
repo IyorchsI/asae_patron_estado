@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "a2dff3f0-bbc0-46c5-8c1f-20f5be5376f7",
+		"name": "Pruebas formatos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21638757"
+	},
+	"item": [
+		{
+			"name": "listarfecha",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/formatos/listarfecha?inicio=2025-03-9&fin=2025-04-10",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"formatos",
+						"listarfecha"
+					],
+					"query": [
+						{
+							"key": "inicio",
+							"value": "2025-03-9"
+						},
+						{
+							"key": "fin",
+							"value": "2025-04-10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/formatos/listar",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"formatos",
+						"listar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consultar",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/formatos/consultar/1",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"formatos",
+						"consultar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crear",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"type\": \"PP\",\r\n        \"titulo\": \"nuevoformato\",\r\n        \"estudiante\": \"Jose\",\r\n        \"codigo\": 44555,\r\n        \"director\": \"nosquien\",\r\n        \"asesor\": \"asesor\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/formatos/crear",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"formatos",
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"type\": \"PP\",\r\n        \"titulo\": \"formatoActualizado\",\r\n        \"estudiante\": \"Jose\",\r\n        \"codigo\": 321,\r\n        \"director\": \"nosquien\",\r\n        \"asesor\": \"asesor\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/formatos/actualizar/1",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"formatos",
+						"actualizar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar",
+			"request": {
+				"auth": {
+					"type": "inherit"
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"type\": \"PP\",\r\n        \"titulo\": \"formatoActualizado\",\r\n        \"estudiante\": \"Jose\",\r\n        \"codigo\": 321,\r\n        \"director\": \"nosquien\",\r\n        \"asesor\": \"asesor\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/formatos/cambiarestado/1/EN_EVALUACION",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"formatos",
+						"cambiarestado",
+						"1",
+						"EN_EVALUACION"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
