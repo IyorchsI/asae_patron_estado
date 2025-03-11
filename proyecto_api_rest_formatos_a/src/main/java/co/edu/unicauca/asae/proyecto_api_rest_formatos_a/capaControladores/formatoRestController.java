@@ -60,7 +60,7 @@ public class formatoRestController {
 		return objFormato;
 	}
 	@PatchMapping("/cambiarestado/{id}/{estado}")
-	public Resultado actualizarFormato(@PathVariable Integer id, @PathVariable enumEstados estado) {
+	public Resultado cambiarEstado(@PathVariable Integer id, @PathVariable enumEstados estado) {
 		Resultado resFormato = formatoService.cambiarEstado(id, estado);
 		return resFormato;
 	}
