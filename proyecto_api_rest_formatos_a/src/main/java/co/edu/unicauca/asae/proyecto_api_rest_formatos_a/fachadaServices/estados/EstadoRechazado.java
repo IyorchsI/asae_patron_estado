@@ -21,7 +21,7 @@ public class EstadoRechazado implements EstadoInt{
 
     @Override
     public Resultado aprobado(Formato formato) {
-        return new Resultado(false, "El formato ya fue aprobado");
+        return new Resultado(false, "El formato no se puede aprobar");
     }
 
     @Override
